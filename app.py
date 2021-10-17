@@ -11,6 +11,7 @@ headers = {
 data = '{"event_type": "fetch-deals"}'
 
 app = Flask(__name__)
+port_app = int(os.environ.get('PORT', 33507))
 
 @app.route('/sendAction')
 def hello_world():
@@ -20,4 +21,4 @@ def hello_world():
     )
 
 if __name__ == '__main__':
-   app.run()
+   app.run(port=port_app)
